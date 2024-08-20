@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flood Prediction</title>
+    <style>
+        body {
+    background-color: #201658;
+    color: #F9E8C9;
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    color: #1D24CA;
+}
+
+form {
+    background-color: #1D24CA;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+label {
+    color: #98ABEE;
+    font-size: 16px;
+}
+
+input[type="text"], input[type="submit"] {
+    background-color: #98ABEE;
+    color: #201658;
+    border: none;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+input[type="text"]:focus, input[type="submit"]:focus {
+    outline: none;
+    box-shadow: 0 0 5px #F9E8C9;
+}
+
+input[type="submit"] {
+    cursor: pointer;
+}
+
+input[type="text"]::placeholder {
+    color: #201658;
+    opacity: 0.5;
+}
+
+table{
+    text-align: right;
+}
+
+footer{
+    position: absolute;
+    bottom: 1%;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+    </style>
+</head>
+<body>
+    <h1>Flood Prediction</h1>
+    <form action="/predict" method="post" id="rainfallForm">
+        <table>
+            <tr>
+                <td>
+                    <label for="JAN">January Rainfall:</label>
+                    <input type="text" id="Month_JAN" name="JAN" onchange="calculateTotal()">
+                </td>
+                <td>
+                    <label for="FEB">February Rainfall:</label>
+                    <input type="text" id="Month_FEB" name="FEB" onchange="calculateTotal()">
+                </td>
+                <td>
+                    <label for="MAR">March Rainfall:</label>
+                    <input type="text" id="Month_MAR" name="MAR" onchange="calculateTotal()">
+                </td>
+            </tr>
+            
+            <tr>
+                <td>
+                    <label for="APR">April Rainfall:</label>
+                    <input type="text" id="Month_APR" name="APR" onchange="calculateTotal()">
+                </td>
+                <td>
+                    <label for="MAY">May Rainfall:</label>
+                    <input type="text" id="Month_MAY" name="MAY" onchange="calculateTotal()">
+                </td>
+                <td>
+                    <label for="JUN">June Rainfall:</label>
+                    <input type="text" id="Month_JUN" name="JUN" onchange="calculateTotal()">
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <label for="JUL">July Rainfall:</label>
+                    <input type="text" id="Month_JUL" name="JUL" onchange="calculateTotal()">
+                </td>
+                <td>
+                    <label for="AUG">August Rainfall:</label>
+                    <input type="text" id="Month_AUG" name="AUG" onchange="calculateTotal()">
+                </td>
+                <td>
+                    <label for="SEP">September Rainfall:</label>
+                    <input type="text" id="Month_SEP" name="SEP" onchange="calculateTotal()">
+                </td>
+            </tr>
+        
+            <tr>
+                <td>
+                    <label for="OCT">October Rainfall:</label>
+                    <input type="text" id="Month_OCT" name="OCT" onchange="calculateTotal()">
+                </td>
+                <td>
+                    <label for="NOV">November Rainfall:</label>
+                    <input type="text" id="Month_NOV" name="NOV" onchange="calculateTotal()">
+                </td>
+                <td>
+                    <label for="DEC">December Rainfall:</label>
+                    <input type="text" id="Month_DEC" name="DEC" onchange="calculateTotal()">
+                </td>
+            </tr>
+        
+            <tr>
+                <td colspan="3">
+                    <label for="ANNUAL_RAINFALL">Annual Rainfall:</label>
+                    <input type="text" id="ANNUAL_RAINFALL" name="ANNUAL_RAINFALL" readonly>
+                </td>
+            </tr>
+        </table>
+        <input type="submit" value="Predict">
+    </form>
+
+    <footer>
+        &copy; Created By Gongada Nagaraju
+    </footer>
+
+    <script>
+        function calculateTotal() {
+            // Get all input elements for months
+            var inputs = document.querySelectorAll('input[id^="Month_"]');
+            console.log(inputs); // Add this line for debugging
+            var total = 0;
+
+            // Loop through all inputs and sum up their values
+            inputs.forEach(function(input) {
+                console.log(input.value); // Add this line for debugging
+                total += parseFloat(input.value) || 0; // Convert value to float or use 0 if NaN
+            });
+
+            // Set the total value to the Annual Rainfall input
+            document.getElementById('ANNUAL_RAINFALL').value = total.toFixed(2); // Set the value with 2 decimal places
+        }
+    </script>
+
+</body>
+</html>
