@@ -8,7 +8,7 @@ Welcome to the **Machine Learning Projects Repository**! This repository contain
 
 Here are the projects included in this repository:
 
-1. **Image Classification with CNNs** - [🔗 View Project](./Flood%20Prediction/)
+1. **Flood Prediction** - [🔗 View Project](./Flood%20Prediction/)
 
 ---
 
