@@ -8,7 +8,7 @@ Welcome to the **Machine Learning Projects Repository**! This repository contain
 
 Here are the projects included in this repository:
 
-1. **Flood Prediction** - [🔗 View Project]('./Flood Prediction/')
+1. **Image Classification with CNNs** - [🔗 View Project](./Flood%20Prediction/)
 
 ---
 
@@ -18,7 +18,7 @@ To get started with any project, follow these steps:
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/machine-learning-projects.git
+   git clone https://github.com/m1010nish/Machine-Learning-Projects.git
    ```
 2. **Navigate to the desired project folder**
    ```bash
